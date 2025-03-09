@@ -13,6 +13,8 @@
         <link rel="icon" type="image/x-icon" href="{% static 'resume/assets/arif_ns.png' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Devicon icons (free version)-->
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -33,8 +35,9 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards & Certifications</a></li>
                 </ul>
             </div>
         </nav>
@@ -78,147 +81,86 @@
                                     <p>{{ experience.description }}</p>
                                 </div>
                                 {% if experience.ongoing is True  %}
-                                <div class="flex-shrink-0"><span class="text-primary">{{ experience.start_date|date:'F Y' }} - Present</span></div>
+                                    <div class="flex-shrink-0"><span class="text-primary">{{ experience.start_date|date:'F Y' }} - Present</span></div>
                                 {% else %}
-                                <div class="flex-shrink-0"><span class="text-primary">{{ experience.start_date|date:'F Y' }} - {{ experience.end_date|date:'F Y' }}</span></div>
+                                    <div class="flex-shrink-0"><span class="text-primary">{{ experience.start_date|date:'F Y' }} - {{ experience.end_date|date:'F Y' }}</span></div>
                                 {% endif %}
                             </div>
-                                {% endfor %}
+                            {% endfor %}
                         {% else %}
-                            <p>No experience are available.</p>
+                            <p>No experience listed.</p>
                         {% endif %}
                 </div>
             </section>
-<!--            <section class="resume-section" id="experience">-->
-<!--                <div class="resume-section-content">-->
-<!--                    <h2 class="mb-5">Experience</h2>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">UI software Engineer</h3>-->
-<!--                            <div class="subheading mb-3">OZB Group </div>-->
-<!--                            <p>Odoo development and various other project</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">August 2023 - Present</span></div>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">System Implementor</h3>-->
-<!--                            <div class="subheading mb-3">Racuntech Sdn Bhd</div>-->
-<!--                            <p>Business messaging platform implementation</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">January 2023 - July 2023</span></div>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">Application Developer</h3>-->
-<!--                            <div class="subheading mb-3">Racuntech Sdn Bhd</div>-->
-<!--                            <p>Automation and custom ERP system</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">August 2021 - March 2022</span></div>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">Programmer Intern</h3>-->
-<!--                            <div class="subheading mb-3">Racuntech Sdn Bhd</div>-->
-<!--                            <p>Automation for various busioness process</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">October 2021 - January 2022</span></div>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">Programming Tutor</h3>-->
-<!--                            <div class="subheading mb-3">International Islamic University Malaysia</div>-->
-<!--                            <p>Introduction to programming using C++ programming language</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </section>-->
             <hr class="m-0" />
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">International Islamic University Malaysia</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">International Islamic University Malaysia</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">International Islamic University Malaysia</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">MRSM Taiping</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">MRSM Lenggong</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
+                        {% if education_list %}
+                            {% for education in education_list %}
+                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                                    <div class="flex-grow-1">
+                                        <h3 class="mb-0">{{ education.location }}</h3>
+                                        <div class="subheading mb-3">{{ education.qualification }}</div>
+                                        <div>{{ education.description }}</div>
+                                        {% if education.cgpa > 0  %}
+                                            <p>{{ education.cgpa }}</p>
+                                        {% endif %}
+                                    </div>
+                                    {% if education.ongoing is True  %}
+                                        <div class="flex-shrink-0"><span class="text-primary">{{ education.start_date|date:'F Y' }} - Present</span></div>
+                                    {% else %}
+                                        <div class="flex-shrink-0"><span class="text-primary">{{ education.start_date|date:'F Y' }} - {{ education.end_date|date:'F Y' }}</span></div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No education listed.</p>
+                        {% endif %}
+
                 </div>
             </section>
-            <hr class="m-0" />
             <!-- Skills-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <div class="subheading mb-3">Programming Languages</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-html5"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-css3-alt"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-js-square"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-python"></i></li>
+                        <li class="list-inline-item"><i class="devicon-cplusplus-plain"></i></li>
+                        <li class="list-inline-item"><i class="devicon-java-plain"></i></i></li>
+
                     </ul>
-                    <div class="subheading mb-3">Workflow</div>
+                    <div class="subheading mb-3">Tools</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item"><i class="fa-brands fa-node-js"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-wordpress"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-npm"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-cpanel"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-docker"></i></li>
+                        <li class="list-inline-item"><i class="devicon-mysql-plain-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-firebase-plain-wordmark"></i></li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Projects-->
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Past and current projects</h2>
                     <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile-First, Responsive Design
+                        <li><span class="fa-li"><i class="fa-solid fa-diagram-project"></i></span>
+                            Personal portfolio
                         </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Browser Testing & Debugging
+                        <li><span class="fa-li"><i class="fa-solid fa-diagram-project"></i></span>
+                            Dashboard
                         </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Functional Teams
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Agile Development & Scrum
+                        <li><span class="fa-li"><i class="fa-solid fa-diagram-project"></i></span>
+                            Machine Learning
                         </li>
                     </ul>
                 </div>
@@ -228,8 +170,12 @@
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+                    <p class="lead mb-0">Apart from being a software engineer, I find joy in data analytics.
+                        I also enjoy most of my time being outdoors playing football, tennis, jogging and cycling.
+                        When forced indoors, I enjoy playing video games and chess. I also reads a lot of novels and books.
+
+                        I spend a large amount of my free time exploring the latest technology advancements in the full stack development world.
+                    </p>
                 </div>
             </section>
             <hr class="m-0" />
@@ -240,41 +186,7 @@
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Analytics Certified Developer
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Mobile Web Specialist - Google Certification
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            2
-                            <sup>nd</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - James Buchanan High School - Hackathon 2006
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            3
-                            <sup>rd</sup>
-                            Place - James Buchanan High School - Hackathon 2005
+                            IIUM Best IT Master Student
                         </li>
                     </ul>
                 </div>
